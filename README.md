@@ -1,18 +1,68 @@
-# React + Vite
+# Postlify Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal post-sharing platform built with React and Vite.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- Vite
+- Tailwind CSS
+- Axios
+- React Router DOM
+- React Hot Toast
+- Lucide React
 
-## React Compiler
+## Getting Started
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Prerequisites
 
-Note: This will impact Vite dev & build performances.
+- Node.js 18+
+- npm or yarn
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/SyntaxAdil/Postlify-client
+cd Postlify-client
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+### Run Locally
+
+```bash
+npm run dev
+```
+
+## Features
+
+- Create posts with image and caption
+- Animated placeholder text
+- Image preview before posting
+- Responsive design
+- Toast notifications
+
+## Deployment
+
+Deployed on **Vercel**.
+
+Add `vercel.json` in root for client-side routing:
+
+```json
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+```
+
+Set `VITE_API_URL` in Vercel environment variables to your Render backend URL.
+
+---
+
+> My first fullstack project — built while learning the MERN stack.
