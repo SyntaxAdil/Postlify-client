@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Images, LoaderIcon, X } from "lucide-react";
+import { Images, X } from "lucide-react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 
 const PostCreate = () => {
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
@@ -11,7 +10,7 @@ const PostCreate = () => {
   const [loading, setLoading] = useState(false);
   const [postContent, setPostContent] = useState("");
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const placeholderText = [
     "Iran won the war...",
@@ -58,11 +57,14 @@ const PostCreate = () => {
 
       try {
         setLoading(true);
-        await axios.post("https://postlify-server.onrender.com/create-post", formData);
+        await axios.post(
+          "https://postlify-server.onrender.com/create-post",
+          formData,
+        );
         setPostContent("");
         setSelectedImage(null);
         setPostImage(null);
-        navigate("/posts")
+        navigate("/posts");
       } catch (error) {
         console.log(error);
       } finally {
@@ -74,11 +76,15 @@ const PostCreate = () => {
   return (
     <div className=" mt-24 px-4">
       <header>
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-900  mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold">
           <span className="text-gray-800">Create</span>{" "}
-          <span className="text-purple-500">a Post</span>
+          <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Post
+          </span>
         </h3>
-
+        <p className="text-gray-500 text-sm mt-1">
+          Share your ideas and content with the community
+        </p>
         <form
           onSubmit={handlePostSubmit}
           className="bg-white rounded-md md:rounded-2xl shadow-md p-5 md:p-6 border border-gray-100"

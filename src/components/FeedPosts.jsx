@@ -14,7 +14,7 @@ export function FeedPostsCart({ post }) {
         <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       <div className="p-5">
-        <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
+        <p className="font-medium text-gray-700 text-sm leading-relaxed line-clamp-3">
           {post.caption}
         </p>
       </div>
