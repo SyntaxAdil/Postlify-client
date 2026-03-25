@@ -28,7 +28,7 @@ function FeedPosts() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const fetching = await axios.get("http://localhost:3000/posts");
+      const fetching = await axios.get("https://postlify-server.onrender.com/posts");
       setTimeout(() => setPosts(fetching.data.data), 0);
     } catch (error) {
       console.log(error);

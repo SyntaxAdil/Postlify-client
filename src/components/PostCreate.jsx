@@ -58,7 +58,7 @@ const PostCreate = () => {
 
       try {
         setLoading(true);
-        await axios.post("http://localhost:3000/create-post", formData);
+        await axios.post("https://postlify-server.onrender.com/create-post", formData);
         setPostContent("");
         setSelectedImage(null);
         setPostImage(null);
