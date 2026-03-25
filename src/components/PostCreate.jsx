@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Images, LoaderIcon, X } from "lucide-react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const PostCreate = () => {
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
@@ -8,6 +10,9 @@ const PostCreate = () => {
   const [postImage, setPostImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [postContent, setPostContent] = useState("");
+
+  const navigate=useNavigate()
+
   const placeholderText = [
     "Iran won the war...",
     "I just built a small project today…",
@@ -57,6 +62,7 @@ const PostCreate = () => {
         setPostContent("");
         setSelectedImage(null);
         setPostImage(null);
+        navigate("/posts")
       } catch (error) {
         console.log(error);
       } finally {

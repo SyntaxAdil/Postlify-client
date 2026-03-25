@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./../components/Navbar";
 import PostCreate from './../components/PostCreate';
-import Posty from "../components/Posty";
+
 
 const HomePage = () => {
   return (
