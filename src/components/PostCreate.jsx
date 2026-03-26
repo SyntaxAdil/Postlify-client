@@ -75,8 +75,8 @@ const PostCreate = () => {
 
   return (
     <div className=" mt-24 px-4">
-      <header>
-        <h3 className="text-2xl md:text-3xl font-bold">
+      <header className="mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold ">
           <span className="text-gray-800">Create</span>{" "}
           <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
             Post
@@ -85,66 +85,66 @@ const PostCreate = () => {
         <p className="text-gray-500 text-sm mt-1">
           Share your ideas and content with the community
         </p>
-        <form
-          onSubmit={handlePostSubmit}
-          className="bg-white rounded-md md:rounded-2xl shadow-md p-5 md:p-6 border border-gray-100"
-        >
-          <textarea
-            value={postContent}
-            name="caption"
-            onChange={(e) => setPostContent(e.target.value)}
-            className="w-full resize-none border border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none rounded-xl px-4 py-4 text-gray-700 placeholder-gray-400 transition"
-            rows={5}
-            placeholder={placeholderText[placeholderIndex]}
-          />
+      </header>
+      <form
+        onSubmit={handlePostSubmit}
+        className="bg-white rounded-md md:rounded-2xl shadow-md p-5 md:p-6 border border-gray-100"
+      >
+        <textarea
+          value={postContent}
+          name="caption"
+          onChange={(e) => setPostContent(e.target.value)}
+          className="w-full resize-none border border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none rounded-xl px-4 py-4 text-gray-700 placeholder-gray-400 transition"
+          rows={5}
+          placeholder={placeholderText[placeholderIndex]}
+        />
 
-          {/* Image Preview */}
-          {selectedImage && (
-            <div className="relative mt-4">
-              <img
-                src={selectedImage}
-                alt="Preview"
-                className="rounded-xl max-h-64 w-full object-cover border border-gray-200"
-              />
-              <button
-                onClick={removeImage}
-                className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-100 transition"
-              >
-                <X size={18} />
-              </button>
-            </div>
-          )}
-
-          {/* Bottom Actions */}
-          <div className="flex items-center justify-between mt-4">
-            {/* Upload */}
-            <label
-              htmlFor="file-input"
-              className="flex items-center gap-2 cursor-pointer text-gray-500 hover:text-purple-500 transition"
-            >
-              <Images size={20} />
-              <span className="text-sm hidden sm:inline">Add image</span>
-              <input
-                name="image"
-                type="file"
-                id="file-input"
-                className="hidden"
-                accept="image/*"
-                onChange={handleImageChange}
-              />
-            </label>
-
-            {/* Post Button */}
+        {/* Image Preview */}
+        {selectedImage && (
+          <div className="relative mt-4">
+            <img
+              src={selectedImage}
+              alt="Preview"
+              className="rounded-xl max-h-64 w-full object-cover border border-gray-200"
+            />
             <button
-              className={` hover:bg-purple-600 text-white px-5 py-2 rounded-lg text-sm font-medium transition shadow-sm cursor-pointer ${loading ? "bg-gray-500" : "bg-purple-500"}`}
-              type="submit"
-              disabled={loading}
+              onClick={removeImage}
+              className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-100 transition"
             >
-              {loading ? "Posting" : "Post"}
+              <X size={18} />
             </button>
           </div>
-        </form>
-      </header>
+        )}
+
+        {/* Bottom Actions */}
+        <div className="flex items-center justify-between mt-4">
+          {/* Upload */}
+          <label
+            htmlFor="file-input"
+            className="flex items-center gap-2 cursor-pointer text-gray-500 hover:text-purple-500 transition"
+          >
+            <Images size={20} />
+            <span className="text-sm hidden sm:inline">Add image</span>
+            <input
+              name="image"
+              type="file"
+              id="file-input"
+              className="hidden"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
+          </label>
+
+          {/* Post Button */}
+          <button
+            className={` hover:bg-purple-600 text-white px-5 py-2 rounded-lg text-sm font-medium transition shadow-sm cursor-pointer ${loading ? "bg-gray-500" : "bg-purple-500"}`}
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Posting" : "Post"}
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

@@ -17,14 +17,10 @@ const Navbar = () => {
           to="/"
           className="flex items-center gap-1 text-xl md:text-2xl font-bold tracking-tight group"
         >
-          <span className="text-gray-700 group-hover:text-gray-900 transition">
-            Postli
+          <span className="text-gray-800">Post</span>
+          <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent -ml-0.5 ">
+            lify
           </span>
-          <span className="text-purple-500">fy</span>
-          <Send
-            size={18}
-            className="text-purple-500 translate-y-0.5 group-hover:translate-x-1 transition"
-          />
         </Link>
 
         {/* Links */}
